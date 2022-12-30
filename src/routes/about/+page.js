@@ -8,5 +8,5 @@
 // 	};
 // }
 
-import {load} from '../scripts/pre-load.js';
-export {load}
+// import {load} from '../scripts/pre-load.js';
+// export {load}
