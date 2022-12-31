@@ -5,4 +5,5 @@
 
 <nav>
     <a href="{base}">Home</a>
+    <a href="{base}/about">About us</a>
 </nav>
