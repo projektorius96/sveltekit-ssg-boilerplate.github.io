@@ -2,9 +2,10 @@
 
 <script>
     import {base} from '$app/paths'
+	const github_suffix = ".github.io";
 </script>
 
 <nav>
-	<a href="{base}">Home</a>
-	<a href="{base}/about">Myself</a>
+	<a href="{base}{github_suffix}">Home</a>
+	<a href="{base}{github_suffix}">Myself</a>
 </nav>
