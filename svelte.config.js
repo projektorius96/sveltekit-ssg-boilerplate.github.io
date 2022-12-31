@@ -1,10 +1,11 @@
 // Credits to CaptainCodeman : @https://github.com/CaptainCodeman/svelte-theme-select/blob/master/svelte.config.js
 
+import path from 'node:path'; // for dynamic repo_name [optional]
 import adapter from '@sveltejs/adapter-static'
 /* import { vitePreprocess } from '@sveltejs/kit/vite' */
 
 const prod = process.env.NODE_ENV === 'production' /* NODE_ENV=production npm run build */
-const repo_name = "sveltekit-ssg-boilerplate"
+const repo_name = `/${(path.resolve("./").split(path.sep)).pop()}`
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {

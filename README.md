@@ -1,3 +1,11 @@
+# sveltekit-ssg-boilerplate
+
+> DEV_NOTES:
+1) - NODE_ENV=production npm run build
+2) - test index.html inside /docs/index.html on local server # expect a working draft
+
+--- 
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).

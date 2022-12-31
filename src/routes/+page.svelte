@@ -1,5 +1,8 @@
 <!-- <h1>Welcome to SvelteKit</h1> -->
+<script>
+    import {base} from '$app/paths'
+</script>
 
 <nav>
-    <a href="/about">About</a>
+    <a href="{base}">Home</a>
 </nav>
