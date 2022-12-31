@@ -5,5 +5,5 @@
 </script>
 
 <nav>
-	<a href="{base}/">To home</a>
+	<a href="{base}">To home</a>
 </nav>
