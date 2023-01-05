@@ -5,6 +5,5 @@
 </script>
 
 <nav>
-	<a href="{base}">Home</a>
-	<a href="{base}/about">Myself</a>
+	<a href="{base}">To home</a>
 </nav>

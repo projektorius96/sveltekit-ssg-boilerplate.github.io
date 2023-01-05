@@ -5,7 +5,8 @@ import adapter from '@sveltejs/adapter-static'
 /* import { vitePreprocess } from '@sveltejs/kit/vite' */
 
 const prod = process.env.NODE_ENV === 'production' /* NODE_ENV=production npm run build */
-const repo_name = `/${(path.resolve("./").split(path.sep)).pop()}`
+const github_suffix = ".github.io";
+const github_repo_name = `/${(path.resolve("./").split(path.sep)).pop()}${github_suffix}`
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -20,7 +21,7 @@ const config = {
 			fallback: null,
 		}),
 		paths: {
-			base: prod ? repo_name : '',
+			base: prod ? github_repo_name : '',
 		},
 	},
 }
