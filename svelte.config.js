@@ -5,9 +5,10 @@ import adapter from '@sveltejs/adapter-static';
 import * as dotenv from 'dotenv';
 /* import { vitePreprocess } from '@sveltejs/kit/vite' */
 
-const {NODE_ENV_PROD} = dotenv.config({
+const {parsed} = dotenv.config({
     path: '.env'
 });
+
 const github_suffix = ".github.io";
 const github_repo_name = `/${(path.resolve("./").split(path.sep)).pop()}`;
 
@@ -24,7 +25,7 @@ const config = {
 			fallback: null,
 		}),
 		paths: {
-			base: (NODE_ENV_PROD) ? (github_repo_name + github_suffix) : (github_repo_name),
+			base: (parsed.NODE_ENV_PROD) ? (github_repo_name + github_suffix) : (github_repo_name),
 		},
 	},
 }
