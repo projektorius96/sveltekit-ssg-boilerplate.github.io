@@ -1,12 +1,16 @@
 // Credits to CaptainCodeman : @https://github.com/CaptainCodeman/svelte-theme-select/blob/master/svelte.config.js
 
 import path from 'node:path'; // for dynamic repo_name [optional]
-import adapter from '@sveltejs/adapter-static'
+import adapter from '@sveltejs/adapter-static';
+import * as dotenv from 'dotenv';
 /* import { vitePreprocess } from '@sveltejs/kit/vite' */
 
-const prod = process.env.NODE_ENV === 'production' /* NODE_ENV=production npm run build */
+const {parsed} = dotenv.config({
+    path: '.env'
+});
+
 const github_suffix = ".github.io";
-const github_repo_name = `/${(path.resolve("./").split(path.sep)).pop()}${github_suffix}`
+const github_repo_name = `/${(path.resolve("./").split(path.sep)).pop()}`;
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -21,7 +25,7 @@ const config = {
 			fallback: null,
 		}),
 		paths: {
-			base: prod ? github_repo_name : '',
+			base: (parsed.NODE_ENV_PROD) ? (github_repo_name + github_suffix) : (github_repo_name),
 		},
 	},
 }
