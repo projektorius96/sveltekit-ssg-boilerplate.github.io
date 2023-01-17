@@ -3,7 +3,7 @@
 import path from 'node:path'; // for dynamic repo_name [optional]
 import adapter from '@sveltejs/adapter-static';
 import * as dotenv from 'dotenv';
-/* import { vitePreprocess } from '@sveltejs/kit/vite' */
+import { vitePreprocess } from '@sveltejs/kit/vite';
 
 const {parsed} = dotenv.config({
     path: '.env'
@@ -16,7 +16,14 @@ const github_repo_name = `/${(path.resolve("./").split(path.sep)).pop()}`;
 const config = {
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
-	// preprocess: [vitePreprocess()], /* <= not required at the moment */
+	preprocess: [vitePreprocess({
+		postcss: {
+			plugins: [
+				import("tailwindcss").then(), 
+				import("autoprefixer").then(), 
+			]
+		}
+	})], /* <= not required at the moment */
 
 	kit: {
 		adapter: adapter({
