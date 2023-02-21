@@ -19,8 +19,8 @@ const config = {
 	preprocess: [vitePreprocess({
 		postcss: {
 			plugins: [
-				import("tailwindcss").then(), 
-				import("autoprefixer").then(), 
+				import("tailwindcss").then(()=>true), 
+				import("autoprefixer").then(()=>true), 
 			]
 		}
 	})], /* <= not required at the moment */

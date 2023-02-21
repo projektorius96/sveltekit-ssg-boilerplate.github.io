@@ -1,8 +1,8 @@
-<h1>Header</h1>
+<Hero />
 
-    <slot />
+    <!-- <slot /> -->
 
-<h3>Footer</h3>
+<Footer/>
 
 <style>
     @tailwind base;
@@ -12,5 +12,7 @@
 
 
 <script>
-    import "../app.css"
+    import "../app.css";
+    import Hero from '../components/dHero.svelte'
+    import Footer from '../components/dFooter.svelte'
 </script>
