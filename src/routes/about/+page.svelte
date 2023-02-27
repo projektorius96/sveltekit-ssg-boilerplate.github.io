@@ -1,5 +1,3 @@
-<!-- <h1>Welcome to SvelteKit</h1> -->
-
 <script>
     import {base} from '$app/paths'
 </script>
